@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const todos = [
+                {
+                    id : 1,
+                    text : "그랜저",
+                    done : false
+                },
+                {
+                    id : 2,
+                    text : "K9",
+                    done : true
+                },
+                {
+                    id : 3,
+                    text : "모하비",
+                    done : false
+                },
+                {
+                    id : 4,
+                    text : "카니발",
+                    done : true
+                }
+            ];
+
+            const index = todos.findIndex(todo => todo.text === "모하비");
+            console.log(index);
+
+            const todo = todos.find(data => data.text === "K9");
+            console.log(todo);
+
+            const tasksNotDone = todos.filter(todo => todo.done === true);
+            console.log(tasksNotDone);
+        </script>
+    </head>
+</html>

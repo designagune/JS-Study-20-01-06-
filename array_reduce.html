@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+        const numbers = [1,2,3,4,5];
+
+        const sum = numbers.reduce((accumulator, current, index, array) => {
+            if(index === array.length -1){
+                return (accumulator + current) / array.length;
+            }
+            return accumulator + current;
+        }, 0);
+        //초기값 0이 accumulater가 됨. current는 각 원소들을 가르킴
+        console.log(sum);
+
+        const alphabets = ['a','a','a','b','c','c','d','e'];
+        const counts = alphabets.reduce((acc, current) =>{
+            if(acc[current]){
+                acc[current] += 1;
+            }
+            else{
+                acc[current] = 1;
+            }
+            return acc;
+        },{});
+
+        console.log(counts);
+        </script>
+    </head>
+</html>

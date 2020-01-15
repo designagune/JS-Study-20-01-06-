@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        class Member
+        {
+            constructor(name, age, gender)
+            {
+                this.name = name;
+                this.age = age;
+                this.gender = gender;
+            }
+            say()
+            {
+                console.log(this.age);
+            }
+        }
+
+        class Donggun extends Member{
+            constructor(age,gender)
+            {
+                super("동건",age,gender);
+            }
+        }
+
+        class Ruby extends Member{
+            constructor(age,gender)
+            {
+                super("루비",age,gender);
+            }
+        }
+
+        const donggun = new Donggun("28","남자")
+        const ruby    = new Ruby("27","여자");
+
+        donggun.say();
+        ruby.say();
+        </script>
+    </head>
+</html>

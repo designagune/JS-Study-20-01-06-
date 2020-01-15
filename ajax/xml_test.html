@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>xml test</title>
+        <meta charset="UTF-8"/>
+        <script>
+            const request = new XMLHttpRequest();
+            request.open("get", "./data/performance.xml", true);
+            request.onreadystatechange = () =>
+            {
+                if( request.readyState === 4 && request.status === 200 )
+                {
+                    const data = request.responseXML.querySelectorAll("perforList"); // XML 데이터 perforList를 변수에 저장
+                    const arrData = Array.from(data); // 유사배열 Array.from function으로 배열로 변경 (변경해야 배열내장 function 사용 가능)
+                    const result = arrData.reduce((acc, cur) => {
+                        acc += `<li> 공연 제목 : ${ cur.querySelector("title").textContent }</li>`;
+                        return acc;
+                    },"");
+                    document.querySelector(".list").innerHTML = result;
+                }
+                else if( request.readyState === 0 || !request.state === 200 ) request.onerror = alert("AJAX ERROR");
+            }
+            request.send();
+        </script>
+    </head>
+    <body>
+        <ul class="list"></ul>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function persona(name){
+                this.name = name;
+                this.introduce = function(){
+                    return "my name is "+this.name;
+                }
+            }
+
+            const test = new persona("Donggun");
+
+            console.log(typeof(test));
+            console.log(typeof(persona));
+        </script>
+    </head>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function Member(name, age, gender)
+            {
+                this.name   = name;
+                this.age    = age;
+                this.gender = gender;
+            }
+
+            Member.prototype.say = function(){
+                console.log(this.age);
+            }
+
+            function Donggun(age, gender){
+                Member.call(this,"동건",age,gender);
+            }
+
+            function Ruby(age, gender){
+                Member.call(this,"루비",age,gender);
+            }
+
+            Donggun.prototype = Member.prototype;
+            Ruby.prototype = Member.prototype;
+
+            const donggun = new Donggun("28","남자");
+            const ruby    = new Ruby("27", "여자");
+
+            donggun.say();
+            ruby.say();
+        </script>
+    </head>
+</html>

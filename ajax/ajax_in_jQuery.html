@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jquery ajax</title>
+        <!-- jQuery lib 호출 -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- ajax -->
+        <script>
+            $.ajax({                    //ajax 사용선언!
+                url:"./data/test.json",  //경로
+                dataType:"json"          //데이터 타입
+            }).done(function(data){     //ajax 선언에서 정상적일 경우
+                let el = "";            //class list에 추가시킬 element
+                $.each(data,function(i,v){ //data의 요소갯수만큼 each문으로 반복 및 i(index),v(value) 파라미터를 가짐
+                    el += "<li> 이름 : "+v.name+" / 나이 : "+v.age+" / 성별 : "+v.gender+"</li>"
+                });
+                $(".list").append(el);  //class list에 value가 누적된 변수 el을 append시킴
+            }).fail(function(){         //ajax 선언에서 문제가 생겼을 경우
+                alert("ajax error");    //경고
+            });
+        </script>
+    </head>
+    <body>
+        <ul class="list"><h2>스터디 멤버</h2></ul>
+    </body>
+</html>

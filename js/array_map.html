@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const array = [1,2,3,4,5,6,7,8];
+
+            const squared = [];
+            for (let i = 0; i < array.length; i++){
+                squared.push(array[i] * array[i]);
+            }
+            console.log("squared  : ",squared);
+
+            const squared2 = [];
+            array.forEach( k => {
+                squared2.push( k * k );
+            });
+            console.log("squared2 : ",squared2)
+
+            const squared3 = array.map( n => n * n);
+            console.log("squared3 : ",squared3);
+        </script>
+    </head>
+</html>

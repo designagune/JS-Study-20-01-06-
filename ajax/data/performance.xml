@@ -1,0 +1,138 @@
+
+    <response>
+        <comMsgHeader>
+            <RequestMsgID></RequestMsgID>
+            <ResponseTime>2020-01-13 16:40:37.4037</ResponseTime>
+            <ResponseMsgID></ResponseMsgID>
+            <SuccessYN>Y</SuccessYN>
+            <ReturnCode>00</ReturnCode>
+            <ErrMsg>NORMAL SERVICE.</ErrMsg>
+        </comMsgHeader>
+        <msgBody>
+            <totalCount>27</totalCount>
+            <cPage>1</cPage>
+            <rows>10</rows>
+            <from>20190101</from>
+            <to>20200113</to>
+            <place>1</place>
+            <sortStdr>1</sortStdr>
+            <perforList>
+                <seq>138850</seq>
+                <title>슈가플래닛：당신의 가장 달콤한 순간은 언제인가요? </title>
+                <startDate>20180810</startDate>
+                <endDate>20190407</endDate>
+                <place>서울숲 갤러리아포레 B1 MMM</place>
+                <realmName>미술</realmName>
+                <area>서울</area>
+                <thumbnail>http://www.culture.go.kr/upload/rdf/18/11/show_2018112614583485621.gif</thumbnail>
+                <gpsX>127.042914261</gpsX>
+                <gpsY>37.5456755268</gpsY>
+            </perforList>
+            <perforList>
+                <seq>135805</seq>
+                <title>뮤지컬 〈랭보〉</title>
+                <startDate>20181023</startDate>
+                <endDate>20190113</endDate>
+                <place>대학로 TOM(티오엠)1관</place>
+                <realmName>연극</realmName>
+                <area>서울</area>
+                <thumbnail>http://www.culture.go.kr/upload/rdf/18/09/show_2018091813593524749.gif</thumbnail>
+                <gpsX>127.00372190765472</gpsX>
+                <gpsY>37.58225110373835</gpsY>
+            </perforList>
+            <perforList>
+                <seq>137027</seq>
+                <title>풍월주</title>
+                <startDate>20181204</startDate>
+                <endDate>20190217</endDate>
+                <place>대학로 유니플렉스 1관</place>
+                <realmName>연극</realmName>
+                <area>서울</area>
+                <thumbnail>http://www.culture.go.kr/upload/rdf/18/10/show_2018101713525168937.png</thumbnail>
+                <gpsX>127.003618266</gpsX>
+                <gpsY>37.5811969444</gpsY>
+            </perforList>
+            <perforList>
+                <seq>141785</seq>
+                <title>연극 &lt;술래잡기&gt;</title>
+                <startDate>20190101</startDate>
+                <endDate>20191231</endDate>
+                <place>댕로홀(구. 두레홀1관)</place>
+                <realmName>연극</realmName>
+                <area>서울</area>
+                <thumbnail>http://www.culture.go.kr/upload/rdf/19/01/show_201901301044677046.gif</thumbnail>
+                <gpsX>127.003722454</gpsX>
+                <gpsY>37.5818564685</gpsY>
+            </perforList>
+            <perforList>
+                <seq>141706</seq>
+                <title>공포연극 〈조각：사라진 기억〉</title>
+                <startDate>20190101</startDate>
+                <endDate>20191231</endDate>
+                <place>댕로홀(구. 두레홀1관)</place>
+                <realmName>연극</realmName>
+                <area></area>
+                <thumbnail>http://www.culture.go.kr/upload/rdf/19/01/show_2019012518171052703.gif</thumbnail>
+                <gpsX>127.003722454</gpsX>
+                <gpsY>37.5818564685</gpsY>
+            </perforList>
+            <perforList>
+                <seq>145710</seq>
+                <title>연극 &lt;작업의 정석&gt; - 대학로</title>
+                <startDate>20190101</startDate>
+                <endDate>20191231</endDate>
+                <place>대학로 연극순위아트홀1관</place>
+                <realmName>연극</realmName><area>서울</area><thumbnail>http://www.culture.go.kr/upload/rdf/19/04/show_2019041217372494371.jpg</thumbnail>
+                <gpsX>127.002803162</gpsX>
+                <gpsY>37.58185289</gpsY>
+            </perforList>
+            <perforList>
+                <seq>140207</seq>
+                <title>로맨틱멜로디 '러브 스코어'</title>
+                <startDate>20190107</startDate>
+                <endDate>20190428</endDate>
+                <place>익스트림씨어터 1관</place>
+                <realmName>연극</realmName>
+                <area>서울</area>
+                <thumbnail>http://www.culture.go.kr/upload/rdf/19/04/show_201904516212177973.jpg</thumbnail>
+                <gpsX>127.00215107746321</gpsX>
+                <gpsY>37.58270163956966</gpsY>
+            </perforList>
+            <perforList>
+                <seq>148225</seq>
+                <title>뮤지컬 &lt;빨래&gt;</title>
+                <startDate>20190115</startDate>
+                <endDate>20190901</endDate>
+                <place>동양예술극장 1관</place>
+                <realmName>기타</realmName>
+                <area>서울</area>
+                <thumbnail>http://www.culture.go.kr/upload/rdf/19/05/show_2019052413373823847.gif</thumbnail>
+                <gpsX>127.002296052</gpsX>
+                <gpsY>37.5846351685</gpsY>
+            </perforList>
+            <perforList>
+                <seq>142227</seq>
+                <title>사움연 20주년 기념 마지막 레파토리 공연 &lt;굴레방다리의 소극&gt; </title>
+                <startDate>20190309</startDate>
+                <endDate>20190330</endDate>
+                <place>두산아트센터 space111</place>
+                <realmName>연극</realmName>
+                <area>서울</area>
+                <thumbnail>http://www.culture.go.kr/upload/rdf/19/02/rdf_2019021415145317335.jpg</thumbnail>
+                <gpsX>127.001000671</gpsX>
+                <gpsY>37.5718122377</gpsY>
+            </perforList>
+            <perforList>
+                <seq>144245</seq>
+                <title>철가방추적작전</title>
+                <startDate>20190409</startDate>
+                <endDate>20190504</endDate>
+                <place>두산아트센터 space111</place>
+                <realmName>연극</realmName>
+                <area>서울</area>
+                <thumbnail>http://www.culture.go.kr/upload/rdf/19/03/rdf_2019032211142819612.jpg</thumbnail>
+                <gpsX>127.001000671</gpsX>
+                <gpsY>37.5718122377</gpsY>
+            </perforList>
+        </msgBody>
+    </response>
