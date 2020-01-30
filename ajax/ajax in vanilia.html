@@ -3,7 +3,7 @@
     <head>
         <script>
            const request = new XMLHttpRequest(); //XMLHttpRequest()선언
-           request.open("GET",'./json/test.json', true); //open후 send 순서 지켜야함 open("전송방식","경로",비동기사용여부)
+           request.open("GET",'./data/test.json', true); //open후 send 순서 지켜야함 open("전송방식","경로",비동기사용여부)
            request.onreadystatechange = function(){ 
             //통신을 하는과정에서 readyState의 진행에따라 onreadystatechange라는 이벤트핸들러가 호출됨 
                if( request.readyState === 4 && request.status === 200){

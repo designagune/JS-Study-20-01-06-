@@ -2,17 +2,33 @@
 <html>
     <head>
         <script>
-            function persona(name){
-                this.name = name;
-                this.introduce = function(){
-                    return "my name is "+this.name;
-                }
-            }
-
-            const test = new persona("Donggun");
-
-            console.log(typeof(test));
-            console.log(typeof(persona));
-        </script>
+           const request = new XMLHttpRequest(); //XMLHttpRequest()선언
+           request.open("GET",'./ajax/data/test.json', true); //open후 send 순서 지켜야함 open("전송방식","경로",비동기사용여부)
+           request.onreadystatechange = function(){ 
+            //통신을 하는과정에서 readyState의 진행에따라 onreadystatechange라는 이벤트핸들러가 호출됨 
+               if( request.readyState === 4 && request.status === 200){
+                   //readyState === 0 -> 객체를 생성했지만 open()메소드로 초기화 하지않음        UnInitialized
+                   //               1 -> 객체를 생성하고 초기화 했지만 send() 메소드 사용 안됨   Loading
+                   //               2 -> send메소드 사용. 아직 데이터는 받지못함                Loaded
+                   //               3 -> 데이터의 일부만 받음                                  Interactive
+                   //               4 -> 모든 데이터를 받음                                    Completed
+                   //Http status === 200 OK, 403 Forbidden, 404 Not Found, 500 Internal Server Error
+                   const data = JSON.parse(request.responseText); //가져온 데이터
+                   let el = '';
+                   console.log(data);
+                   data.forEach(function(data){
+                       console.log(data);
+                       el += "<li> 이름 : "+data.name+", 나이 : "+data.age+", 성별 : "+data.gender+"</li></br>"
+                   });
+                   document.querySelector(".list").innerHTML = el;
+               }
+           }
+           request.send(); //send시 XMLHttpRequest객체를 담은 변수 request가 open에 써있는 방식으로 통신을 시작
+           
+         </script>
     </head>
+    <body>
+        <ul class="list">
+        </ul>
+    </body>
 </html>
