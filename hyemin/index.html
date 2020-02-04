@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <title>자바스크립트</title>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $.ajax({
+            url:"http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaCode?serviceKey=bpA5DgrTFSByQgOsw4GG9R7SRo7EIyZuZ1OJK2K4FydxoTlOzyrBgpsXJliH5RWXUz4UlZDC7oYC%2BUtqmXB87Q%3D%3D",
+            data:{
+                "numOfRows":"20",
+                "pageNo":"1",
+                "MobileOS":"ETC",
+                "MobileApp":"AppTest"
+            },
+            dataType:"xml"
+        }).done(function(data){
+            console.log(data);
+            console.log($(data).find("item"));
+            $.each($(data).find("item"),function(i,v){
+                let code = $(v).find("code").text();
+                let name = $(v).find("name").text();
+                $("#sido").append("<option value = " +code+">"+name+"</option>");
+            })
+
+        }).fail(function(){
+            alert("ajax error!");
+        });
+    </script>
+</head>
+<body>
+    <select name="" id="sido">
+    </select>
+</body>
+</html>

@@ -2,8 +2,12 @@
 <html>
     <head>
         <title></title>
+     
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        
+        <style type="text/css">
+            table,tr,th,td {border: 1px solid #ccc; border-collapse: collapse;}
+    
+        </style>
     </head>
     <body>
         <form>
@@ -16,10 +20,10 @@
         <table class="callData">
             <tr>
                 <th style="width:70px">board</th>
-                <th style="width:70px">title</th>
-                <th style="width:70px">date</th>
-                <th style="width:70px">hit</th>
-                <th style="width:70px">writer</th>
+                <th style="width:400px">title</th>
+                <th style="width:150px">date</th>
+                <th style="width:100px">hit</th>
+                <th style="width:100px">writer</th>
             </tr>
 
         </table>
@@ -28,8 +32,8 @@
    
 
         <script>
-            let tt;
-            $("#page").change(function(){
+  
+            $(document).ready(function(){
                 tt = $("form").serialize();
                 console.log(tt);
                 Ajaxfunc();
@@ -46,7 +50,7 @@
 
                     console.log(data);
                     $.each(data,function(i,v){
-                        el += "<tr><td>"+v.board+"</td> <td>"+v.title+"</td> <td>"+v.date+"</td> <td>"+v.hit+"</td> <td>"+v.writer+"</td></tr>"
+                        el += "<tr><td style ='text-align: center;'>"+v.board+"</td> <td>"+v.title+"</td> <td style ='text-align: center;'>"+v.date+"</td> <td style ='text-align: center;'>"+v.hit+"</td> <td style ='text-align: center;'>"+v.writer+"</td></tr>"
                         console.log(i,v)
                     });
                     $(".callData").append(el)
@@ -55,13 +59,6 @@
                 });
             }
 
-
-
-
-
-
-
-            
         </script>
     </body>
 </html>

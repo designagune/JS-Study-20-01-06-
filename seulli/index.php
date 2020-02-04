@@ -9,9 +9,7 @@
     <body>
         <form>
             <select id="page" name="page">
-                <option value="1">1page</option>
-                <option value="2">2page</option>
-                <option value="3">3page</option>
+                
             </select>
         </form>
         <table>
@@ -19,7 +17,8 @@
         </table>
         <script>
             let tt;
-            $("#page").change(function(){
+            $(document).ready(function(){
+            // $("#page").change(function(){
                 tt = $("form").serialize();
                 console.log(tt);
                 Ajaxfunc();
@@ -28,23 +27,24 @@
             {
                 $.ajax({
                     type:'get',
-                    url:"../studyboard/data.php",
-                    dataType:"json",
-                    data:tt
+                    url:"http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaCode?serviceKey=YbaoQ9SGQjDxsUjX%2B5Ef2KC0mxK0obHuDVcsxSdMfFFE487jz0S0X9dEiTFabL%2FC9L5cMjNQyeOmmh8zP%2F9GpQ%3D%3D",
+                    dataType:"xml",
+                    data : {
+                        "numOfRows":"20",
+                        "pageNo":"1",
+                        "MobileOS":"ETC",
+                        "MobileApp":"AppTest"
+                    },
                 }).done(function(data){
-
-                    let table = "";
-                    console.log(data);
-                    $.each(data,function(i,v){
-                        table +="<tr> <th>board</th>"+"<td>"+v.board+"</td></tr>"+"<tr> <th>title</th>"+"<td>"+v.title+"</td></tr>"+"<tr> <th>date</th>"+"<td>"+v.date+"</td></tr>"+"<tr> <th>hit</th>"+"<td>"+v.hit+"</td></tr>"+"<tr> <th>writer</th>"+"<td>"+v.writer+"</td></tr>"
-                    });
-                    
-                    $("table").append(table);
-                    
+                    $.each($(data).find("item"),function(i,v){
+                        let code = $(v).find("code").text();
+                        let name = $(v).find("name").text();
+                        $("#page").append("<option value='"+code+"'>"+name+"</option>");
+                    })
                 }).fail(function(){
-                    alert("AJAX ERROR!");
+                    alert("ajax error!");
                 });
-            }
+                        }
             
         </script>
     </body>

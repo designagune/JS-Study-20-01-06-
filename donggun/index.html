@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script>
+            $.ajax({
+                url:"http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaCode?serviceKey=bpA5DgrTFSByQgOsw4GG9R7SRo7EIyZuZ1OJK2K4FydxoTlOzyrBgpsXJliH5RWXUz4UlZDC7oYC%2BUtqmXB87Q%3D%3D",
+                dataType:"xml",
+                data:
+                {
+                    numOfRows:20,
+                    pageNo:1,
+                    MobileOS:"ETC",
+                    MobileApp:"AppTest"
+                }
+            }).done(function(data){
+                $.each($(data).find("item"),function(i,v){
+                    const code = $(v).find("code").text();
+                    const name = $(v).find("name").text();
+                    $("#sido").append("<option value = " +code+">"+name+"</option>");
+                });
+            }).fail(function(){
+                alert("error");
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <select id="sido"></select>
+        </header>
+        <article>
+            <section>
+            </section>
+        </article>
+    </body>
+</html>
