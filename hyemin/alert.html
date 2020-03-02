@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+
+    <section>
+        <button onclick="button_click();">button</button>
+        <div>
+            안녕하세요
+        </div>
+    </section>
+
+    <section>
+        <a href="#" onclick="toggle_btn(1); return false;">
+            <img id="test" src="http://placehold.it/600x200" alt="">
+        </a>
+    </section>
+
+    <section>
+        <ul>
+            <li>
+                <a href="">안녕</a>
+                <ul>
+                    <li>
+                        <a href="">바보야</a>
+                    </li>
+                    <li>
+                        <a href="">메롱</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">안녕</a>
+            </li>
+            <li>
+                <a href="">안녕</a>
+            </li>
+            <li>
+                <a href="">안녕</a>
+            </li>
+        </ul>
+    </section>
+
+   <section>
+       <ul class="ul-area">
+           <li>
+               <a href="">zzz</a>
+               <ul>
+                   <li>
+                       <a href="">zzz</a>
+                   </li>
+                   <li>
+                       <a href="">zzz</a>
+                   </li>
+                   <li>
+                       <a href="">zzz</a>
+                   </li>
+                   <li>
+                       <a href="">zzz</a>
+                   </li>
+               </ul>
+           </li>
+           <li>
+               <a href="">zzgg</a>
+           </li>
+       </ul>
+
+   </section>
+</body>
+
+<script>
+    function button_click(){
+        alert("버튼을 눌렀다!");    
+    }
+</script>
+
+<script>
+    var i = 0;
+    function toggle_btn(post_id){
+        i = i + post_id;
+        var a = document.getElementById("test");
+        if(!a) return;
+        console.log(i);
+
+        if(i%2 != 0){
+            a.src="http://placehold.it/200x700";
+        }
+        else{
+            a.src="http://placehold.it/600x200";
+        }
+    }
+</script>
+
+<script>
+
+    window.onload= () => //맨위에 쓰면 써도됨 페이지가 로드되자마자 이벤트발생시 써줘야함 
+    {
+        document.querySelector(".ul-area").addEventListener("mouseover",function(){
+            console.log("afdf");
+        })
+    }
+    //마우스 오버 시킨다
+    //메뉴 내린다
+    //서브나오게 한다
+    //마우스 뗀다
+    //서브메뉴 사라진다
+    //백그라운드 사라진다
+</script>
+    
+</html>

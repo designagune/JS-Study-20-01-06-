@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>이미지클릭 슬라이드</title>
+	<style>
+		*{margin:0; padding:0; box-sizing: border-box;} 
+		.wrap {overflow: hidden; width:1300px; margin: 0 auto; margin-top:10px;}
+		.wrap div{ float:left;  width:33.333%; padding:10px; }
+		.wrap div img{ width:100%; cursor:pointer; }
+		.subBox{ width:1300px; margin: 0 auto; }
+		.box1,.box2,.box3{ position:relative; display: none;}
+		.subBox>div>iframe{margin-left:10px;}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".wrap>div").click(function(){
+
+				//.youtube_MV 클래스에 pause하라는 메세지를 함수로 처리
+				for(var k = 0; k < $(".youtube_MV").length; k++)
+				{
+					$(".youtube_MV")[k].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+				}
+
+				var i = $(this).index() + 1; //클릭한 index 번호를 가져다 쓰기위한 index를 변수 i에 저장
+				$(".box1,.box2,.box3").fadeOut(200); //기존에있을 .box 들 fadeOut으로 초기화
+				setTimeout(function(){
+					$(".box"+i).slideDown(); //변수 i로 현재 클릭한 index의 .box를 슬라이드 다운
+				},300);
+				
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="img1"><img src="http://placehold.it/500x500" alt="dummy1"/></div>
+		<div class="img2"><img src="http://placehold.it/500x500" alt="dummy2"/></div>
+		<div class="img3"><img src="http://placehold.it/500x500" alt="dummy3"/></div>
+	</div>
+	<div class="subBox">
+		<div class="box1">
+			<!-- 기존 iframe src에 ?enablejsapi=1&version=3&playerapiid=ytplayer 라는 쿼리스트링을 추가해줘야 postMessage함수를 먹음 -->
+			<iframe class="youtube_MV" width="1280" height="720" src="https://www.youtube.com/embed/9AH-zdW9NZY?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="box2">
+			<iframe class="youtube_MV" width="1280" height="720" src="https://www.youtube.com/embed/7TkbJ3F52VY?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="box3">
+			<iframe class="youtube_MV" width="1280" height="754" src="https://www.youtube.com/embed/g7YNlIMrzCM?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+	</div>
+</body>
+</html>

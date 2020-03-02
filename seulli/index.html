@@ -1,40 +1,121 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        
-    </head>
-    <body>
-        <form>
-            <select id="page" name="page">
-                <option value="1">1page</option>
-                <option value="2">2page</option>
-                <option value="3">3page</option>
-            </select>
-        </form>
-        <h1>confirm!!</h1>
-        <script>
-            let tt;
-            $("#page").change(function(){
-                tt = $("form").serialize();
-                console.log(tt);
-                Ajaxfunc();
-            });
-            const Ajaxfunc = (si) =>
-            {
-                $.ajax({
-                    type:'get',
-                    url:"../studyboard/data.php",
-                    dataType:"json",
-                    data:tt
-                }).done(function(data){
-                    console.log(data);
-                }).fail(function(){
-                    alert("AJAX ERROR!");
-                });
-            }
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      *{list-style:none;}
+      .gnb{overflow:hidden;background-color:burlywood;padding:0;}
+      .gnb > li{float:left;width:33.3%;}
+      .gnb > li a{display:inline-block;width:100%;text-align:center;}
+      .gnb > li > ul{display:none;padding:30px;background-color:chocolate}
+      
+   </style>
+   <script>
+   // 버튼 클릭시 알림창 호출
+   function test(){
+          alert('졸려');
+      }
+
+   // 이미지 한번 변경
+     /* function changeImg(){
+         var img1 = document.getElementById("img1");
+         img1.src="2.jpg"
+      }*/
+
+   // 이미지 토글
+      var cnt = 1;
+      function imgToggle(){
+         // var img1 = document.getElementById("img1");
+         // var img2 = document.getElementById("img2");
+         if(cnt%2 == 1){
+            document.getElementById("img1").setAttribute("src","1.jpg")
+         } else {
             
-        </script>
-    </body>
+            document.getElementById("img1").setAttribute("src","2.jpg")
+         }
+         cnt++
+      }
+
+   // 마우스 오버
+
+      window.onload = () =>{
+         console.log(gnb);
+         console.log(document.querySelector(".gnb"))
+      }
+      // 변수 설정
+      const gnb = document.getElementsByClassName('gnb');
+      const sub = document.getElementsByClassName('sub');
+
+      // 
+      //    
+
+      // gnb.addEventListener('mouseover', function(){ // 마우스 오버를 시킨다
+      //    console.log('gk');
+      //   // sub.style.display='block'; // 서브메뉴를 내린다
+      // });
+    
+      // 마우스 뗀다
+      // 서브메뉴를 없앤다
+   
+
+        
+
+   </script>
+</head>
+<body>
+   <!-- 버튼 클릭시 알림창 호출-->
+   <div>
+      <p>버튼 클릭시 알림창 호출</p>
+      <input type="button" name="" value="버튼" onclick="test()">
+   </div>
+
+   <hr>
+
+   <!-- 버튼 클릭시 이미지 토글-->
+   <div>
+      <p>버튼 클릭시 이미지 토글</p>
+      <img src="1.jpg" alt="" style="width:300px;height:300px;" id="img1">
+      <!-- <img src="2.jpg" alt="" style="width:300px;height:300px; display:none" id="img2"> -->
+      <button type="button" onclick="imgToggle()">버튼</button>
+   </div>
+
+   <hr>
+
+   <!-- 마우스 오버 -->
+   <div>
+      <ul class="gnb">
+         <li>
+            <a href="#none">1</a>
+            <ul class="sub">
+               <li><a href="#none">a</a></li>
+               <li><a href="#none">b</a></li>
+               <li><a href="#none">c</a></li>
+            </ul>
+         </li>
+         <li>
+            <a href="#none">2</a>
+            <ul class="sub">
+               <li><a href="#none">a</a></li>
+               <li><a href="#none">b</a></li>
+               <li><a href="#none">c</a></li>
+            </ul>
+         </li>
+         <li>
+            <a href="#none">3</a>
+            <ul class="sub">
+               <li><a href="#none">a</a></li>
+               <li><a href="#none">b</a></li>
+               <li><a href="#none">c</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+   <script>
+      document.querySelector(".gnb").addEventListener("mouseover",function(){
+            console.log("!");
+       });
+   </script>
+</body>
 </html>

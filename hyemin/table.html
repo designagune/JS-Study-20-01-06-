@@ -3,7 +3,7 @@
 <head>
    <meta charset="utf-8">
    <title></title>
-   <!-- <style>
+   <style>
       table{border:2px solid #666; border-collapse: collapse;}
       th{border-right:2px solid #999; border-bottom:2px solid #999; width:200px;}
       td{width:800px; border-bottom:2px solid #999;}
@@ -11,28 +11,14 @@
       {
          border-bottom:none;
       }
-   </style> -->
+   </style>
    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-   <!-- <script>
-      $(document).ready(function(){
-        $('input[name=event]').click(function(){
-            if($('.pcList').next().attr('class') !== "mobList") $('.pcList').next().remove();
-            if($('.mobList').next().attr('class') !== "") $('.mobList').next().remove();
-
-            if($(this).val() === "lucky"){
-            $('.pcList, .mobList').after('<tr><th>pc상세이미지</th><td><input type="file"/> <span style="color:red; font-size:.9em; font-weight: bold;">*업로드 가능 파일 : jpg,gif,png *업로드 용량 : 1MB</span><br/>대체텍스트<input type="text" placeholder="20자 이내로 입력하세요." size="50">  (0/50 byte)</td></tr>');
-            }
-        });
-      });
-   </script> -->
    <script>
-      function test(){
-          alert('졸려');
-      }
+      
    </script>
 </head>
 <body>
-   <!-- <section class="wrap">
+   <section class="wrap">
       <div class="container">
          <table>
             <tbody>
@@ -111,7 +97,31 @@
             </tbody>
          </table>
       </div>
-   </section> -->
-   <input type="button" name="" value="" onclick="test()">
+   </section>
+
+   <script>
+       $('input[name=event]').click(function(){
+            if($(".pcList").next().attr("class") !== "mobList"){
+                $(".pcList").next().remove();
+            }
+            if($(".mobList").next().attr("class") !== ""){
+                $(".mobList").next().remove();
+            }
+            
+
+            if($(this).val() === "lucky"){
+                $('.pcList').after(
+                    ' <tr class="pcList"><th>PC배경 이미지</th><td><input type="file"/> <span style="color:red; font-size:.9em; font-weight: bold;">*업로드 가능 파일 : jpg,gif,png *업로드 용량 : 1MB</span><br/>대체텍스트<input type="text" placeholder="20자 이내로 입력하세요." size="50">  (0/50 byte)</td></tr>'
+                );
+                $('.mobList').after(
+                    ' <tr class="pcList"><th>mobile배경 이미지</th><td><input type="file"/> <span style="color:red; font-size:.9em; font-weight: bold;">*업로드 가능 파일 : jpg,gif,png *업로드 용량 : 1MB</span><br/>대체텍스트<input type="text" placeholder="20자 이내로 입력하세요." size="50">  (0/50 byte)</td></tr>'
+                );
+            }
+
+           
+       });
+
+   
+   </script>
 </body>
 </html>

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700|Song+Myung&display=swap');
+*{ padding: 0; margin:0; font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box;}
+a { text-decoration: none; color: #333; }
+li { list-style: none;}
+.container
+{
+    width:1200px;
+    margin : 0 auto;
+}
+header
+{
+    width:100%;
+    height:80px;
+    background:#FFF;
+    position:fixed;
+    z-index: 999;
+    top:0;
+    left:0;
+    border-bottom:1px solid #EEE;
+}
+    header .container
+    {
+        position: absolute;
+        top:0;
+        left:50%;
+        transform:translate(-50%);
+        background:transparent;
+        overflow:hidden;
+    }
+
+        header .container .logo
+        {
+            font-family: 'Song Myung', serif;
+            font-size:1.5em;
+            font-weight: bold;
+            color:#282a35;
+            line-height: 80px;
+            cursor: pointer;
+            float:left;
+        }
+
+        header .container .gnbList
+        {
+            float:left;
+            overflow: hidden;
+            line-height: 80px;
+            margin-left:40px;
+        }
+            header .container .gnbList li
+            {
+                float:left;
+                margin-right:20px;
+            }
+                header .container .gnbList li a {font-weight: bold;}
+                header .container .gnbList li a:hover {color:#777;}
+        
+        header .container #sido
+        {
+            float:right;
+            font-size:1.02em;
+            margin-top:25px;
+        }
+
+.slide
+{
+    margin-top:80px;
+    height:325px;
+    background:#F9F9F9;
+}
+
+article
+{
+    padding:100px 0;
+    background:#F9F9F9;
+    position: relative;
+}
+
+    article .container .list
+    {
+        overflow:hidden;
+    }
+
+        article .container .list li
+        {
+            width:33.333%;
+            float:left;
+            padding-left:40px;
+            margin-bottom:30px;
+        }
+        article .container .list li:nth-child(3n)
+        {
+            padding-right:40px;
+        }
+
+        article .container .list li:nth-child(3n+1)
+        {
+            clear:left;
+        }
+            article .container .list li img
+            {
+                width:100%;
+                max-width: 400px;
+                height: 250px;
+                cursor: pointer;
+                box-shadow: #CCC 0px 0px 10px 1px;
+                transition: ease-in-out 0.3s;
+            }
+                .img_wrap
+                {
+                    width:100%;
+                    height:250px;
+                    overflow: hidden;
+                }
+                article .container .list li img:hover
+                {
+                    transform: scale(1.03);
+                    transition: ease-in-out 0.3s;
+                }
+
+            article .container .list li h3
+            {
+                margin-bottom:10px;
+            }
+        
+    article #more
+    {
+        position: absolute;
+        bottom:50px;
+        right:400px;
+
+        cursor: pointer;
+        background:#F9F9F9;
+        padding:10px 20px;
+        border:2px solid #333;
+        border-radius: 3px;
+        font-weight: bold;
+        font-size:1.2em;
+    }

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		table{border:2px solid #666; border-collapse: collapse;}
+		th{border-right:2px solid #999; border-bottom:2px solid #999; width:200px;}
+		td{width:800px; border-bottom:2px solid #999;}
+		tr:last-child td,tr:last-child th
+		{
+			border-bottom:none;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			$("input[name=event]").click(function(){
+
+				if($(".pcList").next().attr("class") !== "mobList") $(".pcList").next().remove();
+				if($(".mobList").next().attr("class") !== "") $(".mobList").next().remove();
+
+				if( $(this).val() === "lucky" ){
+					addFunc(".pcList","pcBack","PC배경 이미지");
+					addFunc(".mobList","mobBack","MOBILE배경 이미지");
+				}
+
+				
+			});
+
+			function addFunc(sel,clName,th)
+			{
+				$(sel).after("<tr class='"+clName+"'><th>"+th+"</th><td><input type='file'/> <span style='color:red; font-size:.9em; font-weight: bold;''>*업로드 가능 파일 : jpg,gif,png *업로드 용량 : 1MB</span><br/>대체텍스트<input type='text' placeholder='20자 이내로 입력하세요.'' size='50'>  (0/50 byte)</td></tr>");
+			}
+			
+			var i = 0;
+			$("tbody>tr:first-child>th").click(function(){
+				if( i === 0)
+				{
+					$(this).next().text("이슬바보");
+					i += 1;
+				}else
+				{
+					$(this).next().text("Admin");
+					i = 0;
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<section class="wrap">
+		<div class="container">
+			<table>
+				<tbody>
+					<tr>
+						<th style="cursor:pointer;">작성자 (누르면 바뀜)</th>
+						<td>Admin</td>
+					</tr>
+					<tr>
+						<th>채널</th>
+						<td>
+							<input type="checkbox" id="pc"/><label for="pc">PC</label>
+							<input type="checkbox" id="mob"/><label for="mob">MOBILE</label>
+						</td>
+					</tr>
+					<tr>
+						<th>이벤트 대상</th>
+						<td>
+							<select><option>전체</option></select>
+						</td>
+					</tr>
+					<tr>
+						<th>기간</th>
+						<td>
+							<input type="date"/> 귀차너
+						</td>
+					</tr>
+					<tr>
+						<th>이벤트명</th>
+						<td>
+							<input type="text" size="90"/> (0/50 byte)
+						</td>
+					</tr>
+					<tr>
+						<th>이벤트형태</th>
+						<td>
+							<input type="radio" value="info" id="info" name="event"/><label for="info">안내</label>
+							<input type="radio" value="lucky" id="lucky" name="event"/><label for="lucky">럭키드로우</label>
+							<input type="radio" value="rand" id="rand" name="event"/><label for="rand">랜덤쿠폰</label>
+							<input type="radio" value="roul" id="roul" name="event"/><label for="roul">룰렛</label>
+							<input type="radio" value="quiz" id="quiz" name="event"/><label for="quiz">퀴즈</label>
+							<input type="radio" value="check" id="check" name="event"/><label for="check">출첵</label>
+							<input type="radio" value="buy" id="buy" name="event"/><label for="buy">공동구매</label>
+							<input type="radio" value="vo" id="vo" name="event"/><label for="vo">투표</label>
+						</td>
+					</tr>
+					<tr>
+						<th>당첨자</th>
+						<td>
+							<input type="text" value="50"/> 명
+						</td>
+					</tr>
+					<tr>
+						<th>전시상태</th>
+						<td>
+							<input type="radio" value="dison" id="dison" name="event"/><label for="dison">전시</label>
+							<input type="radio" value="disoff" id="disoff" name="event"/><label for="disoff">미전시</label>
+						</td>
+					</tr>
+					<tr class="pcList">
+						<th>PC목록 이미지</th>
+						<td>
+							<input type="file"/> <span style="color:red; font-size:.9em; font-weight: bold;">*업로드 가능 파일 : jpg,gif,png *업로드 용량 : 1MB</span><br/>
+
+							대체텍스트<input type="text" placeholder="20자 이내로 입력하세요." size="50">  (0/50 byte)
+						</td>
+					</tr>
+					<tr class="mobList">
+						<th>MOBILE목록 이미지</th>
+						<td>
+							<input type="file"/> <span style="color:red; font-size:.9em; font-weight: bold;">*업로드 가능 파일 : jpg,gif,png *업로드 용량 : 1MB</span><br/>
+
+							대체텍스트<input type="text" placeholder="20자 이내로 입력하세요." size="50">  (0/50 byte)
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</section>
+</body>
+</html>

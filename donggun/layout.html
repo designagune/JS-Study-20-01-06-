@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 서브메뉴 </title>
+        <meta charset="UTF-8"/>
+        <style>
+            *{padding:0; margin:0; box-sizing: border-box;}
+            li{list-style: none;}
+            a{ color:#333; text-decoration: none;}
+            body>div{
+                position:fixed;
+                width:100%;
+            }
+            body{ background: url("https://www.utransfer.com/assets/main/img/en_US/main/index/bg_main.png") no-repeat;}
+            .container
+            {
+                background:transparent;
+                height:60px;
+                padding:0 16px;
+                transition:ease-in-out 0.3s;
+            }
+            .d-flex::after
+            {
+                content: "";
+                display:block;
+                clear:both;
+            }
+            .d-flex #main-gnb-menu
+            {
+                position:absolute;
+                top:0;
+                left:300px;
+            }
+                .d-flex .logo
+                {
+                    filter:brightness(2000%);
+                }
+                .d-flex .logo ,.d-flex #main-gnb-menu
+                {
+                    float:left;
+                }
+                
+                .d-flex #main-gnb-menu .nav
+                {
+                    background:transparent;
+                }
+                    .d-flex #main-gnb-menu .nav
+                    {
+                        /* overflow:hidden; */
+                        margin-left:100px;
+                    }
+                    .d-flex #main-gnb-menu .nav::after
+                    {
+                        content: "";
+                        display:block;
+                        clear:both;
+                    }
+                        .d-flex .logo ,.d-flex .logo-svg
+                        {
+                            padding-top:10px;
+                        }
+                        .d-flex .logo ,.d-flex #main-gnb-menu .nav .depth1
+                        {
+                            float:left;
+                            line-height: 60px;
+                            margin-right:50px;
+                            font-weight: bold;
+                            cursor:pointer;
+                            padding: 0 20px;
+                            z-index:2;
+                        }
+                        .d-flex .logo ,.d-flex #main-gnb-menu .nav .depth1:first-child
+                        {
+                            position:relative;
+                        }
+                            .depth1>ul
+                            {
+                                position: absolute;
+                                top:50px;
+                                left:0;
+                                display: none;
+                                padding: 0 20px;
+                            }
+
+            .d-flex #main-gnb-right
+            {
+                float:right;
+            }
+
+            .test2
+            {
+                width:100%;
+                height:200px;
+                background:#FFF;
+                opacity:.7;
+                display:none;
+                position:absolute;
+                top:60px;
+                left:0;
+                z-index:1;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <nav>
+                <div class="container">
+                    <div class="d-flex">
+                        <a href="/" class="logo">
+                            <img src="https://www.utransfer.com/assets/main/img/common/svg/logo.svg" class="logo-svg" alt="utranfer-logo">
+                        </a>
+                        <div id="main-gnb-menu">
+                            <ul class="nav nav-main">
+                                <li class="depth1">
+                                    <a href="#">이용방법</a>
+                                    <ul>
+                                        <li>dummy1</li>
+                                        <li>dummy1</li>
+                                        <li>dummy1</li>
+                                    </ul>
+
+                                </li>
+                                <li class="depth1">
+                                    <a href="#">수수료</a>
+                                </li>
+                                <li class="depth1">
+                                    <a href="#">고객지원</a>
+                                </li>
+                                <li class="depth1">
+                                    <a href="#">공지사항</a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                        <div id="main-gnb-right">
+                            <ul>
+                                <li><button>KR</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="test2"></div>
+            </nav>
+        </div>
+            </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+        </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+    </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+            </br></br></br></br></br></br></br></br><h1>끝</h1>
+        <script>
+            $(".nav, button").mouseover(function(){
+                $(".logo").css("filter","brightness(100%)");
+                $(".test2,.depth1>ul").slideDown(300);
+                $(".test2, .nav, .nav *, button").addClass("keeping");
+                $(".container").css("background","#FFF");
+            });
+
+            $("html").mouseover(function(e){
+                if(!$(e.target).hasClass("keeping"))
+                {
+                    $(".test2,.depth1>ul").slideUp(200);
+                    $(".logo").css("filter","brightness(2000%)");
+                    $(".container").css("background","transparent");
+                }
+            });
+            
+
+        </script>
+    </body>
+</html>          
