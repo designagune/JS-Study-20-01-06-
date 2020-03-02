@@ -1,168 +1,169 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>imgchange</title>
+    <style>
+      button {
+        color: #7950f2;
+        border: 2px solid #9775fa;
+        padding: 10px 20px;
+        cursor: pointer;
+        background: #e5dbff;
+        font-weight: bold;
+        border-radius: 3px;
+        transition: ease-in 0.125s;
+      }
 
-<head>
-  <meta charset="utf-8" />
-  <title></title>
-  <style>
-    button {
-      color: #7950f2;
-      border: 2px solid #9775fa;
-      padding: 10px 20px;
-      cursor: pointer;
-      background: #e5dbff;
-      font-weight: bold;
-      border-radius: 3px;
-      transition: ease-in 0.125s;
-    }
+      button:hover {
+        background: #f3f0ff;
+        transition: ease-in 0.125s;
+      }
 
-    button:hover {
-      background: #f3f0ff;
-      transition: ease-in 0.125s;
-    }
+      button:active {
+        background: #d0bfff;
+        transition: ease-in 0.125s;
+      }
 
-    button:active {
-      background: #d0bfff;
-      transition: ease-in 0.125s;
-    }
+      #img {
+        display: flex;
+        width: 100%;
+      }
 
-    #img {
-      display: flex;
-      width: 100%;
-    }
+      #img img {
+        width: 100%;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(() => {
+        const img = [
+          [
+            {
+              id: 0,
+              src: "http://astragun.com/images/hypnotic.jpg", //경로
+              name: "히포나틱", //
+              link: "http://www.hypnotic.co.kr"
+            },
+            {
+              id: 1,
+              src: "http://astragun.com/images/shebeach.jpg", //경로
+              name: "쉬비치", //
+              link: "http://shebeach.co.kr"
+            },
+            {
+              id: 2,
+              src: "http://astragun.com/images/tomonari.jpg", //경로
+              name: "토모나리", //
+              link: "http://www.tomonari.co.kr/"
+            },
+            {
+              id: 3,
+              src: "http://astragun.com/images/thexxxy.jpg", //경로
+              name: "TheXXXY", //
+              link: "https://thexxxy.com/"
+            },
+            {
+              id: 4,
+              src: "http://astragun.com/images/amella.jpg", //경로
+              name: "아멜라", //
+              link: "http://www.amellabeach.com/"
+            }
+          ],
+          [
+            {
+              id: 0,
+              src: "http://astragun.com/images/rohol.jpg", //경로
+              name: "로홀", //
+              link: "https://www.rohol.co.kr"
+            },
+            {
+              id: 1,
+              src: "http://astragun.com/images/D&B.jpg", //경로
+              name: "D&B", //
+              link: "http://www.dabagirl.co.kr"
+            },
+            {
+              id: 2,
+              src: "http://astragun.com/images/crewbi.jpg", //경로
+              name: "크류비", //
+              link: "https://www.crewbi.com"
+            },
+            {
+              id: 3,
+              src: "http://astragun.com/images/2vray.jpg", //경로
+              name: "2vray", //
+              link: "https://2vray.com/"
+            },
+            {
+              id: 4,
+              src: "http://astragun.com/images/shehj.jpg", //경로
+              name: "shehj", //
+              link: "https://shehj.com"
+            }
+          ],
+          [
+            {
+              id: 0,
+              src: "http://astragun.com/images/blla.jpg", //경로
+              name: "blla", //
+              link: "https://www.blla.co.kr"
+            },
+            {
+              id: 1,
+              src: "http://astragun.com/images/jogun.jpg", //경로
+              name: "jogun", //
+              link: "http://www.jogunshop.com/"
+            },
+            {
+              id: 2,
+              src: "http://astragun.com/images/sn-sn.jpg", //경로
+              name: "sn-sn", //
+              link: "http://sn-sn.co.kr/"
+            },
+            {
+              id: 3,
+              src: "http://astragun.com/images/bnb.jpg", //경로
+              name: "bnb", //
+              link: "http://www.bonnyandbunny.com/"
+            },
+            {
+              id: 4,
+              src: "http://astragun.com/images/merong.jpg", //경로
+              name: "merong", //
+              link: "https://www.merongshop.com"
+            }
+          ]
+        ];
 
-    #img img {
-      width: 100%;
-    }
-  </style>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(() => {
-      const img = [
-        [{
-            id: 0,
-            src: "http://astragun.com/images/hypnotic.jpg", //경로
-            name: "히포나틱", //
-            link: "http://www.hypnotic.co.kr"
-          },
-          {
-            id: 1,
-            src: "http://astragun.com/images/shebeach.jpg", //경로
-            name: "쉬비치", //
-            link: "http://shebeach.co.kr"
-          },
-          {
-            id: 2,
-            src: "http://astragun.com/images/tomonari.jpg", //경로
-            name: "토모나리", //
-            link: "http://www.tomonari.co.kr/"
-          },
-          {
-            id: 3,
-            src: "http://astragun.com/images/thexxxy.jpg", //경로
-            name: "TheXXXY", //
-            link: "https://thexxxy.com/"
-          },
-          {
-            id: 4,
-            src: "http://astragun.com/images/amella.jpg", //경로
-            name: "아멜라", //
-            link: "http://www.amellabeach.com/"
-          }
-        ],
-        [{
-            id: 0,
-            src: "http://astragun.com/images/rohol.jpg", //경로
-            name: "로홀", //
-            link: "https://www.rohol.co.kr"
-          },
-          {
-            id: 1,
-            src: "http://astragun.com/images/D&B.jpg", //경로
-            name: "D&B", //
-            link: "http://www.dabagirl.co.kr"
-          },
-          {
-            id: 2,
-            src: "http://astragun.com/images/crewbi.jpg", //경로
-            name: "크류비", //
-            link: "https://www.crewbi.com"
-          },
-          {
-            id: 3,
-            src: "http://astragun.com/images/2vray.jpg", //경로
-            name: "2vray", //
-            link: "https://2vray.com/"
-          },
-          {
-            id: 4,
-            src: "http://astragun.com/images/shehj.jpg", //경로
-            name: "shehj", //
-            link: "https://shehj.com"
-          }
-        ],
-        [{
-            id: 0,
-            src: "http://astragun.com/images/blla.jpg", //경로
-            name: "blla", //
-            link: "https://www.blla.co.kr"
-          },
-          {
-            id: 1,
-            src: "http://astragun.com/images/jogun.jpg", //경로
-            name: "jogun", //
-            link: "http://www.jogunshop.com/"
-          },
-          {
-            id: 2,
-            src: "http://astragun.com/images/sn-sn.jpg", //경로
-            name: "sn-sn", //
-            link: "http://sn-sn.co.kr/"
-          },
-          {
-            id: 3,
-            src: "http://astragun.com/images/bnb.jpg", //경로
-            name: "bnb", //
-            link: "http://www.bonnyandbunny.com/"
-          },
-          {
-            id: 4,
-            src: "http://astragun.com/images/merong.jpg", //경로
-            name: "merong", //
-            link: "https://www.merongshop.com"
-          }
-        ]
-      ];
+        // const box = document.querySelectorAll(".box");	//유사배열 -> Array like
 
-      // const box = document.querySelectorAll(".box");	//유사배열 -> Array like
+        $(".btn").click(function() {
+          const index = $(this).index();
 
-      $(".btn").click(function () {
-        const index = $(this).index();
-
-        const imgArray = $(".box img").toArray(); // $(.box img) 는 유사배열임. 그래서 toArray() 함수로 배열로 바꿔줘야해
-        imgArray.map((v, i) => {
-          $(v).attr("src", img[index][i].src);
+          const imgArray = $(".box img").toArray(); // $(.box img) 는 유사배열임. 그래서 toArray() 함수로 배열로 바꿔줘야해
+          imgArray.map((v, i) => {
+            $(v).attr("src", img[index][i].src);
+          });
         });
       });
-    });
-  </script>
-</head>
+    </script>
+  </head>
 
-<body>
-  <section>
-    <button class="btn">버튼1</button>
-    <button class="btn">버튼2</button>
-    <button class="btn">버튼3</button>
-    <br />
-    <br />
-    <div id="img">
-      <a href="#" class="box"><img src="http://placehold.it/200x201" /></a>
-      <a href="#" class="box"><img src="http://placehold.it/200x202" /></a>
-      <a href="#" class="box"><img src="http://placehold.it/200x203" /></a>
-      <a href="#" class="box"><img src="http://placehold.it/200x204" /></a>
-      <a href="#" class="box"><img src="http://placehold.it/200x205" /></a>
-    </div>
-  </section>
-</body>
-
+  <body>
+    <section>
+      <button class="btn">버튼1</button>
+      <button class="btn">버튼2</button>
+      <button class="btn">버튼3</button>
+      <br />
+      <br />
+      <div id="img">
+        <a href="#" class="box"><img src="http://placehold.it/200x201"/></a>
+        <a href="#" class="box"><img src="http://placehold.it/200x202"/></a>
+        <a href="#" class="box"><img src="http://placehold.it/200x203"/></a>
+        <a href="#" class="box"><img src="http://placehold.it/200x204"/></a>
+        <a href="#" class="box"><img src="http://placehold.it/200x205"/></a>
+      </div>
+    </section>
+  </body>
 </html>
