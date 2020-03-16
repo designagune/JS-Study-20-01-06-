@@ -1,0 +1,295 @@
+[{
+        "id": 1,
+        "type": "테크",
+        "title": "Android Engineering Manager",
+        "catagory": "Android"
+    },
+    {
+        "id": 2,
+        "type": "테크",
+        "title": "CISO",
+        "catagory": "Security"
+    },
+    {
+        "id": 3,
+        "type": "테크",
+        "title": "Data Enginnering Team Lead",
+        "catagory": "Data"
+    },
+    {
+        "id": 4,
+        "type": "테크",
+        "title": "DevOps Engineering Manager",
+        "catagory": "DevOps"
+    },
+    {
+        "id": 5,
+        "type": "테크",
+        "title": "Junior Android Engineer",
+        "catagory": "Android"
+    },
+    {
+        "id": 6,
+        "type": "테크",
+        "title": "Junior DevOps Engineer",
+        "catagory": "DevOps"
+    },
+    {
+        "id": 7,
+        "type": "테크",
+        "title": "Junior Server Engineer",
+        "catagory": "Server"
+    },
+    {
+        "id": 8,
+        "type": "테크",
+        "title": "Junior Web Front-End Engineer",
+        "catagory": "Web Front-End"
+    },
+    {
+        "id": 9,
+        "type": "테크",
+        "title": "Junior iOS Engineer",
+        "catagory": "iOS"
+    },
+    {
+        "id": 10,
+        "type": "테크",
+        "title": "QA Engineer",
+        "catagory": "QA"
+    },
+    {
+        "id": 11,
+        "type": "테크",
+        "title": "Senior Android Engineer",
+        "catagory": "Android"
+    },
+    {
+        "id": 12,
+        "type": "테크",
+        "title": "Senior Data Scientist",
+        "catagory": "Data"
+    },
+    {
+        "id": 13,
+        "type": "테크",
+        "title": "Senior DevOps Engineer",
+        "catagory": "DevOps"
+    },
+    {
+        "id": 14,
+        "type": "테크",
+        "title": "Senior Network Engineer",
+        "catagory": "Infra"
+    },
+    {
+        "id": 15,
+        "type": "테크",
+        "title": "Senior Server Engineer",
+        "catagory": "Server"
+    },
+    {
+        "id": 16,
+        "type": "테크",
+        "title": "Senior System Engineer",
+        "catagory": "Infra"
+    },
+    {
+        "id": 17,
+        "type": "테크",
+        "title": "Senior Web Front-End Engineer",
+        "catagory": "Web Front-End"
+    },
+    {
+        "id": 18,
+        "type": "테크",
+        "title": "Senior iOS Engineer",
+        "catagory": "iOS"
+    },
+    {
+        "id": 19,
+        "type": "테크",
+        "title": "Server Engineering Manager",
+        "catagory": "Server"
+    },
+    {
+        "id": 20,
+        "type": "테크",
+        "title": "Web Front-End Engineering Manager",
+        "catagory": "Web Front-End"
+    },
+    {
+        "id": 21,
+        "type": "테크",
+        "title": "iOS Engineering Manager",
+        "catagory": "iOS"
+    },
+    {
+        "id": 22,
+        "type": "디자인",
+        "title": "BX Manager",
+        "catagory": "BX"
+    },
+    {
+        "id": 23,
+        "type": "디자인",
+        "title": "Junior UI Designer",
+        "catagory": "UI"
+    },
+    {
+        "id": 24,
+        "type": "디자인",
+        "title": "Junior UX Designer",
+        "catagory": "UX"
+    },
+    {
+        "id": 25,
+        "type": "디자인",
+        "title": "Senior BX Designer",
+        "catagory": "BX"
+    },
+    {
+        "id": 26,
+        "type": "디자인",
+        "title": "Senior UX Designer",
+        "catagory": "UX"
+    },
+    {
+        "id": 27,
+        "type": "디자인",
+        "title": "UX Manager",
+        "catagory": "UX"
+    },
+    {
+        "id": 28,
+        "type": "디자인",
+        "title": "VP of UX",
+        "catagory": "UX"
+    },
+    {
+        "id": 29,
+        "type": "마케팅",
+        "title": "브랜드 전략가",
+        "catagory": "Brand"
+    },
+    {
+        "id": 30,
+        "type": "마케팅",
+        "title": "Senior Performance Marketer",
+        "catagory": "Performance Marketing"
+    },
+    {
+        "id": 31,
+        "type": "인사",
+        "title": "Culture Manager",
+        "catagory": "Culture"
+    },
+    {
+        "id": 32,
+        "type": "인사",
+        "title": "People & Culture Lead",
+        "catagory": "HR"
+    },
+    {
+        "id": 33,
+        "type": "인사",
+        "title": "Recruiting Manager",
+        "catagory": "Recruiting"
+    },
+    {
+        "id": 34,
+        "type": "인사",
+        "title": "Senior Recruiter",
+        "catagory": "Recruiting"
+    },
+    {
+        "id": 35,
+        "type": "제품",
+        "title": "Data Connect PO",
+        "catagory": "PO"
+    },
+    {
+        "id": 36,
+        "type": "제품",
+        "title": "가계부 PO",
+        "catagory": "PO"
+    },
+    {
+        "id": 37,
+        "type": "제품",
+        "title": "건강 보험 추천 PO",
+        "catagory": "PO"
+    },
+    {
+        "id": 38,
+        "type": "제품",
+        "title": "부동산 관리 PO",
+        "catagory": "PO"
+    },
+    {
+        "id": 39,
+        "type": "제품",
+        "title": "자동차 관리 PO",
+        "catagory": "PO"
+    },
+    {
+        "id": 40,
+        "type": "전략",
+        "title": "M&A Manager",
+        "catagory": "Corporate"
+    },
+    {
+        "id": 41,
+        "type": "전략",
+        "title": "Business Strategy Manager",
+        "catagory": "Business"
+    },
+    {
+        "id": 42,
+        "type": "전략",
+        "title": "IR Manager",
+        "catagory": "Corporate"
+    },
+    {
+        "id": 43,
+        "type": "전략",
+        "title": "Senior Business Strategy Manager",
+        "catagory": "Business"
+    },
+    {
+        "id": 44,
+        "type": "재무",
+        "title": "Senior Accountant",
+        "catagory": "재무회계"
+    },
+    {
+        "id": 45,
+        "type": "법무",
+        "title": "시니어 사내 변호사",
+        "catagory": "변호사"
+    },
+    {
+        "id": 46,
+        "type": "법무",
+        "title": "사내 변호사",
+        "catagory": "변호사"
+    },
+    {
+        "id": 47,
+        "type": "BD",
+        "title": "Business Operator",
+        "catagory": "Operation"
+    },
+    {
+        "id": 47,
+        "type": "BD",
+        "title": "Research Analyst (Senior & Junior)",
+        "catagory": "Research"
+    },
+    {
+        "id": 48,
+        "type": "BD",
+        "title": "Senior Business Developer",
+        "catagory": "Business Developer"
+    }
+]

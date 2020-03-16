@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>carousel</title>
+    <meta charset="UTF-8" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .carouselWrap {
+            width: 236px;
+            overflow: hidden;
+            margin: 10px 0 0 10px;
+        }
+
+        .carouselWrap ul {
+            display: flex;
+            margin-bottom: 10px;
+
+        }
+
+        .carouselWrap ul li {
+            list-style: none;
+            border: 2px solid #999;
+            border-radius: 50%;
+            width: 13px;
+            margin-right: 5px;
+            color: transparent;
+            cursor: pointer;
+            font-size: 0.5rem;
+            user-select: none;
+        }
+
+        .carouselWrap ul li.active {
+            border: 2px solid #333;
+        }
+
+        .sld_wrap {
+            display: flex;
+            transition: ease-in-out .2s;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        // window.onload = () => {
+        //     const index = document.querySelectorAll(".sld_box").length;
+        //     document.querySelector(".sld_box img")
+        //     // document.querySelector(".sld_wrap").style.width = "2000px";
+        // }
+        $(document).ready(function () {
+            var index = $(".sld_box").length;
+            var imgWidth = $(".sld_wrap img").width();
+            var movingDistance = 0;
+
+            $(".sld_wrap").width(imgWidth * index);
+
+            $(".carouselWrap ul li").click(function () {
+                var liIndex = $(this).index();
+                $(".sld_wrap").css("transform", "translate(-" + (imgWidth * liIndex) + "px)");
+                $(".carouselWrap ul li").removeClass();
+                $(this).addClass("active");
+            });
+
+            function auto() {
+                console.log(movingDistance);
+                if (movingDistance >= -1416) {
+                    $(".sld_wrap").css("transform", "translate(" + movingDistance + "px)");
+                    movingDistance -= 236;
+                } else {
+                    movingDistance = 0;
+                }
+            }
+
+            setInterval(auto, 1500);
+
+
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <section class="carouselWrap">
+        <ul>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+        </ul>
+        <div class="sld_wrap">
+            <div class="sld_box">
+                <a href="#"><img src="http://flexcode.dothome.co.kr/carousel_Image/carouselImg1.png" /></a>
+            </div>
+            <div class="sld_box">
+                <a href="#"><img src="http://flexcode.dothome.co.kr/carousel_Image/carouselImg2.png" /></a>
+            </div>
+            <div class="sld_box">
+                <a href="#"><img src="http://flexcode.dothome.co.kr/carousel_Image/carouselImg3.png" /></a>
+            </div>
+            <div class="sld_box">
+                <a href="#"><img src="http://flexcode.dothome.co.kr/carousel_Image/carouselImg4.png" /></a>
+            </div>
+            <div class="sld_box">
+                <a href="#"><img src="http://flexcode.dothome.co.kr/carousel_Image/carouselImg5.png" /></a>
+            </div>
+            <div class="sld_box">
+                <a href="#"><img src="http://flexcode.dothome.co.kr/carousel_Image/carouselImg6.png" /></a>
+            </div>
+            <div class="sld_box">
+                <a href="#"><img src="http://flexcode.dothome.co.kr/carousel_Image/carouselImg7.png" /></a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
