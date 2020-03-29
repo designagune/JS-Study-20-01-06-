@@ -1,99 +1,103 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>tabmenu</title>
-    <meta charset="utf-8" />
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-    ></script>
-    <script>
-      $(document).ready(function() {
-        Ajax("전체");
 
-        listClick(".tech", "테크");
-        listClick(".design", "디자인");
-        listClick(".marketing", "마케팅");
-        listClick(".hi", "인사");
-        listClick(".finance", "재무");
-        listClick(".judge", "법무");
-        listClick(".product", "제품");
-        listClick(".strategy", "전략");
-        listClick(".bd", "BD");
-        listClick(".experience", "고객경험");
-        listClick(".all", "전체");
+<head>
+  <title>tabmenu</title>
+  <meta charset="utf-8" />
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      Ajax("전체");
+
+      listClick(".tech", "테크");
+      listClick(".design", "디자인");
+      listClick(".marketing", "마케팅");
+      listClick(".hi", "인사");
+      listClick(".finance", "재무");
+      listClick(".judge", "법무");
+      listClick(".product", "제품");
+      listClick(".strategy", "전략");
+      listClick(".bd", "BD");
+      listClick(".experience", "고객경험");
+      listClick(".all", "전체");
+
+    });
+
+    function listClick(cls, title) {
+      $(cls).click(function () {
+        Ajax(title);
       });
+    }
 
-      function listClick(cls, title) {
-        $(cls).click(function() {
-          Ajax(title);
-        });
-      }
-
-      function Ajax(type) {
-        $.ajax({
+    function Ajax(type) {
+      $.ajax({
           url: "./data/type.json",
           dataType: "json"
         })
-          .done(function(data) {
-            //매개변수 , 파라미터
-            var el = "";
-            console.log(data);
+        .done(function (data) {
+          //매개변수 , 파라미터
+          var el = "";
+          console.log(data);
 
-            $.each(data, function(i, v) {
-              if (v.type === type) {
-                el += "<div>";
-                el += "<div class='type'>" + v.type + "</div>";
-                el += "<div class='title'>" + v.title + "</div>";
-                el += "</div>";
-              } else if (type === "전체") {
-                el += "<div>";
-                el += "<div class='type'>" + v.type + "</div>";
-                el += "<div class='title'>" + v.title + "</div>";
-                el += "</div>";
-              } else if (type === "고객경험") {
-                el =
-                  "<h3>현재 진행중인 공고가 없습니다. 다음 기회에 지원해주세요.</h3>";
-              }
-            });
-            $(".list").html(el);
-          })
-          .fail(function() {
-            console.log("fail");
+          $.each(data, function (i, v) {
+            if (v.type === type) {
+              el += "<div>";
+              el += "<div class='type'>" + v.type + "</div>";
+              el += "<div class='title'>" + v.title + "</div>";
+              el += "</div>";
+            } else if (type === "전체") {
+              el += "<div>";
+              el += "<div class='type'>" + v.type + "</div>";
+              el += "<div class='title'>" + v.title + "</div>";
+              el += "</div>";
+            } else if (type === "고객경험") {
+              el =
+                "<h3>현재 진행중인 공고가 없습니다. 다음 기회에 지원해주세요.</h3>";
+            }
           });
-      }
-    </script>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      ul {
-        display: flex;
-        justify-content: center;
-      }
-      li {
-        list-style: none;
-        margin-right: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <section>
-      <ul>
-        <li class="all">전체</li>
-        <li class="tech">테크</li>
-        <li class="design">디자인</li>
-        <li class="marketing">마케팅</li>
-        <li class="hi">인사</li>
-        <li class="product">제품</li>
-        <li class="strategy">전략</li>
-        <li class="finance">재무</li>
-        <li class="judge">법무</li>
-        <li class="bd">BD</li>
-        <li class="experience">고객경험</li>
-      </ul>
-      <div class="list"></div>
-    </section>
-  </body>
+          $(".list").html(el);
+        })
+        .fail(function () {
+          console.log("fail");
+        });
+    }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    li {
+      list-style: none;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <ul>
+      <li class="all">전체</li>
+      <li class="tech">테크</li>
+      <li class="design">디자인</li>
+      <li class="marketing">마케팅</li>
+      <li class="hi">인사</li>
+      <li class="product">제품</li>
+      <li class="strategy">전략</li>
+      <li class="finance">재무</li>
+      <li class="judge">법무</li>
+      <li class="bd">BD</li>
+      <li class="experience">고객경험</li>
+    </ul>
+    <div class="list"></div>
+  </section>
+</body>
+
 </html>

@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>국문관광정보서비스</title>
-        <!--유니코드-->
-        <meta charset="UTF-8"/>
-        <!--jQuery lib-->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <!-- bring local code data -->
-        <script src="js/select.js"></script>
 
-        <!-- common css -->
-        <link href="css/index.css" rel="stylesheet"/>
-        <!-- swiper -->
-        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-        <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-    </head>
-    <body>
-        <header>
-            <div class="container">
-                <div class="logo">국문관광정보제공</div>
-                <ul class="gnbList">
-                    <li><a href="http://kto.visitkorea.or.kr/kor.kto" target="_blank">한국관광공사</a></li>
-                    <li><a href="https://korean.visitkorea.or.kr/main/main.do" target="_blank">대한민국 - 구석구석</a></li>
-                    <li><a href="https://www.tour.go.kr/" target="_blank">관광지식정보</a></li>
-                </ul>
-                <select id="sido"></select>
-            </div>
-        </header>
-        <section class="slide swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="./img/slide1.jpg" alt="main1"/></div>
-                <div class="swiper-slide"><img src="./img/slide2.jpg" alt="main2"/></div>
-                <div class="swiper-slide"><img src="./img/slide3.jpg" alt="main3"/></div>
-                <div class="swiper-slide"><img src="./img/slide4.jpg" alt="main4"/></div>
-                <div class="swiper-slide"><img src="./img/slide5.jpg" alt="main5"/></div>
-                <div class="swiper-slide"><img src="./img/slide6.jpg" alt="main6"/></div>
-              </div>
-              <!-- Add Pagination -->
-              <div class="swiper-pagination"></div>
-        </section>
-        <script>
-            var swiper = new Swiper('.swiper-container', {
-              slidesPerView: 3,
-              spaceBetween:  30,
-              pagination: {
+<head>
+    <title>국문관광정보서비스</title>
+    <!--유니코드-->
+    <meta charset="UTF-8" />
+    <!--jQuery lib-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- bring local code data -->
+    <script src="js/select.js"></script>
+
+    <!-- common css -->
+    <link href="css/index.css" rel="stylesheet" />
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">국문관광정보제공</div>
+            <ul class="gnbList">
+                <li><a href="http://kto.visitkorea.or.kr/kor.kto" target="_blank">한국관광공사</a></li>
+                <li><a href="https://korean.visitkorea.or.kr/main/main.do" target="_blank">대한민국 - 구석구석</a></li>
+                <li><a href="https://www.tour.go.kr/" target="_blank">관광지식정보</a></li>
+            </ul>
+            <select id="sido"></select>
+            <p>시도선택</p>
+        </div>
+    </header>
+    <section class="slide swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./img/slide1.jpg" alt="main1" /></div>
+            <div class="swiper-slide"><img src="./img/slide2.jpg" alt="main2" /></div>
+            <div class="swiper-slide"><img src="./img/slide3.jpg" alt="main3" /></div>
+            <div class="swiper-slide"><img src="./img/slide4.jpg" alt="main4" /></div>
+            <div class="swiper-slide"><img src="./img/slide5.jpg" alt="main5" /></div>
+            <div class="swiper-slide"><img src="./img/slide6.jpg" alt="main6" /></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </section>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
-              },
-              autoplay: {
-                    delay: 2500,
-                    disableOnInteraction: false,
-                },
-            });
-            
-          </script>
-        <article>
-            <section>
-                <div class="container">
-                    <ul class="list"></ul>
-                </div>
-            </section>
-            <input type="button" value="더 보기" id="more"/>
-        </article>
-        <script src="js/index.js"></script>
-    </body>
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+    <article>
+        <section>
+            <div class="container">
+                <ul class="list"></ul>
+            </div>
+        </section>
+        <input type="button" value="더 보기" id="more" />
+    </article>
+    <script src="js/index.js"></script>
+</body>
+
 </html>
